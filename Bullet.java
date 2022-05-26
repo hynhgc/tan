@@ -30,8 +30,6 @@ public class Bullet extends GameObject{
                 break;
         }
     }
-
-    /**×Óµ¯ÓëÌ¹¿ËÅö×²¼ì²â*/
     public void hitBot(){
         Rectangle next= this.getRec();
         List<Bot> bots = this.gamePanel.botList;
@@ -40,6 +38,18 @@ public class Bullet extends GameObject{
                 System.out.println("hit bot");
                 this.gamePanel.botList.remove(bot);
                 this.gamePanel.removeList.add(this);
+                break;
+            }
+        }
+    }
+
+    public void hitBase(){
+        Rectangle next = this.getRec();
+        for(Base base: gamePanel.baseList) {
+            if (base.getRec().intersects(next)) {
+                this.gamePanel.tankList.remove(base);
+                this.gamePanel.removeList.add(this);
+                this.gamePanel.state = 4;
                 break;
             }
         }

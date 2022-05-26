@@ -3,6 +3,7 @@ package tankwar;
 import java.awt.*;
 
 public abstract class GameObject {
+
     Image img;
     int x;
     int y;
@@ -11,6 +12,7 @@ public abstract class GameObject {
     int speed;
     Direction direction;
     GamePanel gamePanel;
+
     public GameObject(){}
     public GameObject(String img, int x, int y, GamePanel gamePanel) {
         this.img = Toolkit.getDefaultToolkit().getImage(img);
@@ -66,13 +68,6 @@ public abstract class GameObject {
     public void setSpeed(int speed) {
         this.speed = speed;
     }
-    public Direction getDirection() {
-        return direction;
-    }
-
-    public void setDirection(Direction direction) {
-        this.direction = direction;
-    }
 
     public GamePanel getGamePanel() {
         return gamePanel;
@@ -81,7 +76,7 @@ public abstract class GameObject {
     public void setGamePanel(GamePanel gamepanel) {
         this.gamePanel = gamePanel;
     }
+
     public abstract void paintSelf(Graphics g);
     public abstract Rectangle getRec();
 }
-

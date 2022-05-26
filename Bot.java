@@ -52,7 +52,6 @@ public class Bot extends Tank{
         Point p = getHeadPoint();
         Random r = new Random();
         int rnum =r.nextInt(100);
-        //System.out.println("r: "+rnum);
         if(rnum<2) {
             System.out.println(rnum);
             EnemyBullet enemyBullet = new EnemyBullet("E:\\Ì¹¿Ë´óÕ½\\images\\bulletYellow.gif",p.x,p.y,direction,gamePanel);
